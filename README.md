@@ -10,3 +10,6 @@ As of right now, this overlay has the following packages available:
 - [s6-rc](https://skarnet.org/software/s6-rc)
 - [s6-linux-init](https://skarnet.org/software/s6-linux-init)
 - [s6-frontend](https://skarnet.org/software/s6-frontend)
+
+## Disclosure
+This overlay is automatically updated with a script. The script *only* supports retrieving the latest versions of the packages listed above. Future support for other unrelated packages is currently undecided. 

@@ -43,7 +43,7 @@ src_configure() {
 	local myconf=(
 		--bindir=/bin
 		--dynlibdir="/$(get_libdir)"
-		--skeldir=/etc/s6-linux-init/skel
+		--skeldir=/etc/s6/skel
 		--libdir="/usr/$(get_libdir)/${PN}"
 		--libexecdir=/lib/s6
 		--with-dynlib="/$(get_libdir)"
@@ -67,9 +67,24 @@ src_install() {
 	default
 
 	if use sysv-utils ; then
-		"${D}/bin/s6-linux-init-maker" -f "${D}/etc/s6-linux-init/skel" "${T}/dir" || die
-		into /
-		dosbin "${T}/dir/bin"/{halt,poweroff,reboot,shutdown,telinit}
+		exeinto /etc/s6/skel
+		doexe "${FILESDIR}/rc.init"
+		doexe "${FILESDIR}/rc.shutdown"
+		doexe "${FILESDIR}/rc.shutdown.final"
+		doexe "${FILESDIR}/runlevel"
+
+		"${D}/bin/s6-linux-init-maker" -1 \
+			-f "${D}/etc/s6/skel" \
+			-G "/usr/bin/agetty -L -8 tty12 115200" \
+			-c "/etc/s6/current" \
+			"${T}/current" || die
+
+		mv "${T}/current/bin/init" "${T}/current/bin/s6-init" || die
+
+		dobin "${T}/current/bin"/* || die
+
+		rm -r "${T}/current/bin"
+		cp -a "${T}/current" "${D}/etc/s6/current" || die
 	fi
 }
 

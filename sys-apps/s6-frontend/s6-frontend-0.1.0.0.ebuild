@@ -32,6 +32,10 @@ src_prepare() {
 	sed -i -e 's/.*-Wl,--hash-style=both$/:/' configure || die
 
 	sed -i -e '/AR := /d' -e '/RANLIB := /d' Makefile || die
+
+	for patch in "${FILESDIR}"/*.patch; do
+		[[ -f "${patch}" ]] && eapply "${patch}"
+	done
 }
 
 src_configure() {

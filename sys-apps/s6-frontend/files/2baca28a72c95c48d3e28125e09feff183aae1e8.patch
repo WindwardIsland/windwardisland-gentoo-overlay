@@ -1,0 +1,29 @@
+From 2baca28a72c95c48d3e28125e09feff183aae1e8 Mon Sep 17 00:00:00 2001
+From: Laurent Bercot <ska-skaware@skarnet.org>
+Date: Sat, 8 Aug 2026 03:57:21 +0000
+Subject:  Fix off-by-one quoting in live_status_some
+
+---
+ src/s6-frontend/live_status.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/src/s6-frontend/live_status.c b/src/s6-frontend/live_status.c
+index e12a7c4..85fc784 100644
+--- a/src/s6-frontend/live_status.c
++++ b/src/s6-frontend/live_status.c
+@@ -110,9 +110,9 @@ static void live_status_some (char const *const *services, int withe)
+   unsigned int m = 0 ;
+   int e ;
+   size_t llen = strlen(g->dirs.live) ;
+-  char llivedir[llen + 3] ;
+-  llivedir[0] = ' ' ; llivedir[1] = ' ' ;
+-  memcpy(llivedir + 2, g->dirs.live, llen + 1) ;
++  char llivedir[llen + 2] ;
++  llivedir[0] = ' ' ;
++  memcpy(llivedir + 1, g->dirs.live, llen + 1) ;
+   char const *argv[26] ;
+   if (!stralloc_catb(&sa, " ", 1)) dienomem() ;
+   e = get_atomics(services, env_len(services), &sa, withe) ;
+-- 
+cgit v1.3.1
+

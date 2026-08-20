@@ -1,0 +1,25 @@
+From c68082ba3dae88bcfe68f77703a6169ba8ec8283 Mon Sep 17 00:00:00 2001
+From: Laurent Bercot <ska-skaware@skarnet.org>
+Date: Sat, 8 Aug 2026 14:38:59 +0000
+Subject:  another quoting fix
+
+---
+ src/s6-frontend/live_status.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/s6-frontend/live_status.c b/src/s6-frontend/live_status.c
+index 85fc784..b65eab7 100644
+--- a/src/s6-frontend/live_status.c
++++ b/src/s6-frontend/live_status.c
+@@ -137,7 +137,7 @@ static void live_status_some (char const *const *services, int withe)
+   argv[m++] = " " S6RC_EXTBINPREFIX "s6-rc" ;
+   argv[m++] = " -l" ;
+   argv[m++] = llivedir ;
+-  argv[m++] = withe ? " -cbE" : "-cbe" ;
++  argv[m++] = withe ? " -cbE" : " -cbe" ;
+   argv[m++] = " --" ;
+   argv[m++] = " list" ;
+   argv[m++] = "" ;
+-- 
+cgit v1.3.1
+

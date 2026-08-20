@@ -2,11 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer type="person">
-		<email>arkamar@gentoo.org</email>
-		<name>Petr Vaněk</name>
-	</maintainer>
-	<maintainer type="person">
-		<email>williamh@gentoo.org</email>
-		<name>William Hubbs</name>
+		<email>windwardocean@protonmail.com</email>
 	</maintainer>
 </pkgmetadata>

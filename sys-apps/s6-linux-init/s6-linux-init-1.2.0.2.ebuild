@@ -85,6 +85,12 @@ src_install() {
 
 		rm -r "${T}/current/bin"
 		cp -a "${T}/current" "${D}/etc/s6/current" || die
+
+		if [[ -z "$(ls -A "${D}/etc/s6/current/env")" ]]; then
+			keepdir /etc/s6/current/env
+		else
+			dodir /etc/s6/current/env
+		fi
 	fi
 }
 

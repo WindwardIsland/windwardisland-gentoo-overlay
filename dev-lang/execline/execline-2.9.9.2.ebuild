@@ -16,6 +16,8 @@ KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~mips ~ppc ~ppc64 ~riscv ~x86"
 RDEPEND=">=dev-libs/skalibs-2.15.0.0:="
 DEPEND="${RDEPEND}"
 
+RESTRICT="mirror"
+
 HTML_DOCS=( doc/. )
 
 src_prepare() {

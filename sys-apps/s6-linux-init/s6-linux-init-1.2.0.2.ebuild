@@ -26,6 +26,8 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}"
 
+RESTRICT="mirror"
+
 HTML_DOCS=( doc/. )
 
 src_prepare() {

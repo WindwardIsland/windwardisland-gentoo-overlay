@@ -13,6 +13,8 @@ LICENSE="ISC"
 SLOT="0/$(ver_cut 1-2).0"
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~mips ~ppc ~ppc64 ~riscv ~x86"
 
+RESTRICT="mirror"
+
 HTML_DOCS=( doc/. )
 
 src_prepare() {

@@ -23,6 +23,8 @@ DEPEND="${RDEPEND}
 	sys-apps/s6-linux-init:=
 "
 
+RESTRICT="mirror"
+
 HTML_DOCS=( doc/. )
 
 src_prepare() {

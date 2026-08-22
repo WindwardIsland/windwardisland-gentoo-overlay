@@ -4,4 +4,7 @@
 	<maintainer type="person">
 		<email>windwardocean@protonmail.com</email>
 	</maintainer>
+	<upstream>
+		<remote-id type="github">skarnet/skalibs</remote-id>
+	</upstream>
 </pkgmetadata>

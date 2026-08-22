@@ -4,6 +4,9 @@
 	<maintainer type="person">
 		<email>windwardocean@protonmail.com</email>
 	</maintainer>
+	<upstream>
+		<remote-id type="github">skarnet/execline</remote-id>
+	</upstream>
 	<longdescription lang="en">
 		Execline is a non-interactive scripting language similar to sh.
 		According to the home page, the syntax is far mor logical and

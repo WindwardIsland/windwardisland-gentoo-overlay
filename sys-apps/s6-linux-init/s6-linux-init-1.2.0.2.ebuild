@@ -7,7 +7,7 @@ inherit optfeature toolchain-funcs
 
 DESCRIPTION="Generates an init binary for s6-based init systems"
 HOMEPAGE="https://www.skarnet.org/software/s6-linux-init/"
-SRC_URI="https://www.skarnet.org/software/${PN}/${P}.tar.gz"
+SRC_URI="https://github.com/skarnet/${PN}/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="ISC"
 SLOT="0/$(ver_cut 1-2)"

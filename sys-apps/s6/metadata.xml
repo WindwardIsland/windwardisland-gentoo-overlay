@@ -4,6 +4,9 @@
 	<maintainer type="person">
 		<email>windwardocean@protonmail.com</email>
 	</maintainer>
+	<upstream>
+		<remote-id type="github">skarnet/s6</remote-id>
+	</upstream>
 	<longdescription lang="en">
 		S6 is a small suite of programs for UNIX designed to allow
 		service supervision similar to daemontools or runit.

@@ -4,6 +4,9 @@
 	<maintainer type="person">
 		<email>windwardocean@protonmail.com</email>
 	</maintainer>
+	<upstream>
+		<remote-id type="github">skarnet/s6-rc</remote-id>
+	</upstream>
 	<use>
 		<flag name="system-init">Installed as a provider of virtual/service-manager.</flag>
 	</use>

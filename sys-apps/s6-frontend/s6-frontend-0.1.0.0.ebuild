@@ -7,7 +7,7 @@ inherit toolchain-funcs
 
 DESCRIPTION="Frontend to the s6 init system"
 HOMEPAGE="https://skarnet.org/software/s6-frontend/"
-SRC_URI="https://www.skarnet.org/software/${PN}/${P}.tar.gz"
+SRC_URI="https://github.com/skarnet/${PN}/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="ISC"
 SLOT="0"
